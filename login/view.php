@@ -1,5 +1,6 @@
 <?php include('../view/headerlogin.php'); ?>
 <h2>Create an account</h2>
+
 <div class="row">
     <form id="login" class="col s12" action="index.php" method="post">
         <input type="hidden" name="action" value="login" />

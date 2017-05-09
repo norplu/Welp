@@ -4,7 +4,6 @@
         $query = "SELECT restaurant_id, name, description, location, hours
                   FROM Restaurant;";
         $restaurants = $db->query($query);
-        $restaurants = $restaurants->fetch();
         
         return $restaurants;
     }

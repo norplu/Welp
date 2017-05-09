@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,7 @@
 	<div id="page">
 		<nav>
 			<div class="nav-wrapper">
-				<a href="#" class="brand-logo center">Welp</a>
+				<a href="../index.php" class="brand-logo center">Welp</a>
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
 					<li><a href="../index.php">Home</a></li>

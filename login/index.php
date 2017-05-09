@@ -22,10 +22,11 @@ if($action == 'login') {
     if (empty($email) || empty($password)) {
         $error = "Please fill in all fields.";
         include('../errors/error.php');
+    } else {
+        login($email, $password);
+        
+        header('Location: ../new_review/index.php');
     }
-    login($email, $password);
-    
-    include('../index.php');
 }
 
 ?>

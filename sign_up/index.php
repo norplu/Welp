@@ -22,6 +22,8 @@ if($action == 'add_user') {
         include('../errors/error.php');
     }
     add_user($f_name, $l_name, $email, $password);
+    
+    header('Location: ../new_review/index.php');
 }
 
 ?>
