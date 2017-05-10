@@ -25,7 +25,7 @@ if($action == 'login') {
     } else {
         login($email, $password);
         
-        header('Location: ../');
+        header('Location: ../index.php');
     }
 }
 

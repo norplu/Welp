@@ -1,4 +1,4 @@
-<?php include('../view/headermain.php'); ?>
+<?php include('../view/header.php'); ?>
 
 <div class="row" >
     <div class="col s10 offset-s1">

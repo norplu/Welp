@@ -9,7 +9,7 @@
 			<h3>Write a Review</h3>
 		</div>
 		<div class="row">
-			<form id="new_review" class="col s12" action="../new_review/index.php" method="post">
+			<form id="new_review" class="col s12" action="./new_review/index.php" method="post">
 				<input type="hidden" name="action" value="new_review" />
 				<div class="row">
 					<div class="input-field col s5 offset-s1">

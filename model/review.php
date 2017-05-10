@@ -6,7 +6,6 @@
                   FROM Review  
                   WHERE restaurant_id = '$restaurant_id';";
         $reviews = $db->query($query);
-        $reviews = $reviews->fetch();
         
         return $reviews;
     }
