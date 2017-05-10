@@ -25,7 +25,7 @@ if($action == 'login') {
     } else {
         login($email, $password);
         
-        header('Location: ../new_review/index.php');
+        header('Location: ../');
     }
 }
 

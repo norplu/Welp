@@ -72,8 +72,6 @@
         $user_id = get_user_id($email);
         $hash = get_pass($user_id);
         
-        var_dump($hash);
-        
         if(password_verify($password, $hash)) {
             return true;
         } else {
@@ -94,8 +92,7 @@
         } else {
             //add error message in here later, if it doesnt fail before this we 
             // should reconsider how i made this
-            echo $user_id;
-            echo "ksjdhfkajshfkjsadhfkz";
+            
         }
     }
     

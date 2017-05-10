@@ -11,7 +11,7 @@ if(isset($_POST['action'])) {
 if($action == '') {
     include('view.php');
 }
-if($action == 'add_user') {
+if($action == 'sign_up') {
     $f_name = $_POST['f_name'];
     $l_name = $_POST['l_name'];
     $email = $_POST['email'];
@@ -20,10 +20,11 @@ if($action == 'add_user') {
     if (empty($f_name) || empty($l_name) || empty($email) || empty($password)) {
         $error = "Please fill in all fields.";
         include('../errors/error.php');
+    } else {
+        add_user($f_name, $l_name, $email, $password);
+        
+        header('Location: ../index.php');
     }
-    add_user($f_name, $l_name, $email, $password);
-    
-    header('Location: ../new_review/index.php');
 }
 
 ?>

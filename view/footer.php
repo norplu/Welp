@@ -6,9 +6,6 @@
 	$fname = $_SESSION['f_name'];
 	$lname = $_SESSION['l_name'];
 	
-	echo $user;
-	echo $fname;
-	echo $lname;
 	?>
 </body>
 </html>
