@@ -2,7 +2,7 @@
     // Gotta get em by the restaurant id
     function get_reviews_rest($restaurant_id) {
         global $db;
-        $query = "SELECT title, comment, rating
+        $query = "SELECT user_id, title, comment, rating
                   FROM Review  
                   WHERE restaurant_id = '$restaurant_id';";
         $reviews = $db->query($query);
@@ -16,6 +16,7 @@
         $query = "INSERT INTO Review(user_id, restaurant_id, title, comment, rating) 
                   VALUES('$user_id', '$restaurant_id', '$title', '$comment', '$rating');";
         $db->exec($query);
+        unset($_POST);
     }
     
     // TODO MAYBE ADD EDITING COMMENTS

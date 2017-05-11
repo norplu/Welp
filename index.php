@@ -1,21 +1,8 @@
 <?php 
-/*
-if(!(isset($_POST['action']))) {
-    //$restaurants = get_restaurants();
-    header("Location: ./restaurants");
-    //include('./restaurants/index.php');
-} else {
-
-    
-    require('model/database.php');
-    require('model/restaurant.php');
-
-    include('view.php');
-*/
-
-require('./model/database.php');
-require('./model/restaurant.php');
-require('./model/user.php');
+require_once('./model/database.php');
+require_once('./model/restaurant.php');
+require_once('./model/user.php');
+require_once('./model/review.php');
 
 $restaurants = get_restaurants();
 
@@ -46,5 +33,30 @@ if($action == '') {
     $hours = $rest['hours'];
     
     include('./restaurants/restaurant_view.php');
+    //header('Location: ./restaurants/restaurant_view.php');
+} else if ($action == 'add_review') {
+    if(isset($_POST['rest_id'])) {
+        $rest_id = intval($_POST['rest_id']);
+    } else {
+        $rest_id = 1;
+    }
+    
+    $user_id = intval($_POST['user_id']);
+    $rest_id = intval($_POST['rest_id']);
+    $rev_title = $_POST['rev_title'];
+    $rev_review = $_POST['rev_review'];
+    $rev_rating = intval($_POST['rev_rating']);
+    
+    add_review($user_id, $rest_id, $rev_title, $rev_review, $rev_rating);
+    
+    $rest = get_restaurant($rest_id);
+    
+    $name = $rest['name'];
+    $desc = $rest['description'];
+    $loc = $rest['location'];
+    $hours = $rest['hours'];
+    
+    include('./restaurants/restaurant_view.php');
+    //header('Location: ./restaurants/restaurant_view.php');
 }
 ?>

@@ -19,28 +19,38 @@
 	<div id="page">
 		<?php if (isset($_SESSION['user_id'])) : ?>
 		<nav>
-			<div class="nav-wrapper">
-				<a href="./" class="brand-logo center">Welp</a>
-					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-				<ul class="right hide-on-med-and-down">
-					<li><a href="../logout">Logout</a></li>
-				</ul>
-				<ul class="side-nav" id="mobile-demo">
-					<li><a href="../logout">Logout</a></li>
-				</ul>
+			<a href="./" class="brand-logo center">Welp</a>
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+			<div class="row">
+				<div class="col s10 offset-s1">
+					<div class="nav-wrapper">
+						<ul class="right hide-on-med-and-down">
+							<li><a href="../logout">Logout</a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
+			<ul class="side-nav" id="mobile-demo">
+				<li><a href="../logout">Logout</a></li>
+			</ul>
 		</nav>
 		<?php else : ?>
 		<nav>
 			<div class="nav-wrapper">
 				<a href="./" class="brand-logo center">Welp</a>
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-				<ul class="right hide-on-med-and-down">
-					<!--<li><a href="../sign_up">Sign Up</a></li>-->
-					<li><a class="modal-content" href="#sign_up">Sign Up</a></li>
-					<!--<li><a href="../login">Login</a></li>-->
-					<li><a cless="modal-content" href="#login">Login</a></li>
-				</ul>
+			<div class="row">
+				<div class="col s10 offset-s1">
+					<div class="nav-wrapper">
+						<ul class="right hide-on-med-and-down">
+							<!--<li><a href="../sign_up">Sign Up</a></li>-->
+							<li><a class="modal-content" href="#sign_up">Sign Up</a></li>
+							<!--<li><a href="../login">Login</a></li>-->
+							<li><a cless="modal-content" href="#login">Login</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 				<ul class="side-nav" id="mobile-demo">
 					<!--<li><a href="../sign_up">Sign Up</a></li>-->
 					<li><a class="modal-content" href="#sign_up">Sign Up</a></li>

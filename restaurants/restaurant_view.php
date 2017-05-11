@@ -1,19 +1,38 @@
-<?php require('model/database.php'); ?>
-<?php require('model/review.php'); ?>
-
 <?php include('./view/headermain.php'); ?>
 
-<h1><?php echo $name; ?></h1>
-<p>
-    <?php echo $desc; ?>
-</p>
+<div class="row">
+    <div class="col s10 offset-s1">
+        <h2><?php echo $name; ?></h2>
+        <p>
+            <?php echo $desc; ?>
+        </p>
+    </div>
+</div>
 
-<?php $reviews = get_reviews_rest($_POST['rest_id']); ?>
+<?php $reviews = get_reviews_rest($rest_id); ?>
 
 <?php foreach($reviews as $review) : ?>
-    <h3><?php echo $review['title'] ?></h3>
-    <p><?php echo $review['rating'] ?></p>
-    <p><?php echo $review['comment'] ?></p>
+
+<?php $user = get_user_data($review['user_id']); ?>
+
+    <div class="row">
+        <div class="col s8 offset-s1">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title"><?php echo $review['title'] ?></span>
+                    
+                    <?php for($i = 0; $i < $review['rating']; $i++) : ?>
+                    <i class="material-icons yellow-text">star</i>
+                    <?php endfor ?>
+                    <?php for($i = $review['rating']; $i < 5; $i++) : ?>
+                    <i class="material-icons">star</i>
+                    <?php endfor ?>
+                    <p><?php echo $user['f_name'] . " " . $user['l_name'] . " says:"; ?></p>
+                    <p><?php echo $review['comment'] ?></p>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php endforeach ?>
 
-<?php include('./view/footer.php'); ?>
+<?php include('./view/footerreview.php'); ?>
