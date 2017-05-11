@@ -1,7 +1,7 @@
 <?php 
 
 if(isset($_POST['action'])) {
-    $action = filter_input(INPUT_POST, 'action');
+    $action = $_POST['action'];
 } else if (isset($_GET['action'])) {
     $action = $_GET['action'];
 } else {
@@ -10,8 +10,8 @@ if(isset($_POST['action'])) {
 
 $rest_id = $_GET['rest_id'];
     
-add_review(filter_input(INPUT_POST, 'user_id'), filter_input(INPUT_POST, 'rest_id'), filter_input(INPUT_POST, 'rev_title'), 
-    filter_input(INPUT_POST, 'rev_review'), filter_input(INPUT_POST, 'rev_rating'));
+add_review($_POST['user_id'], $_POST['rest_id'], $_POST['rev_title'], 
+    $_POST['rev_review'], $_POST['rev_rating']);
     
     echo $rest_id;
 

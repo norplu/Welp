@@ -3,7 +3,7 @@ require('../model/database.php');
 require('../model/user.php');
 
 if(isset($_POST['action'])) {
-    $action = filter_inpute(INPUT_POST, 'action');
+    $action = $_POST['action'];
 } else {
     $action = '';
 }
@@ -12,8 +12,8 @@ if($action == '') {
     include('view.php');
 }
 if($action == 'login') {
-    $email = filter_input(INPUT_POST, 'email');
-    $password = filter_input(INPUT_POST, 'password');
+    $email = $_POST['email'];
+    $password = $_POST['password'];
     
     if (empty($email) || empty($password)) {
         $error = "Please fill in all fields.";

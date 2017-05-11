@@ -7,7 +7,7 @@ require_once('./model/review.php');
 $restaurants = get_restaurants();
 
 if(isset($_POST['action'])) {
-    $action = filter_input(INPUT_POST, 'action');
+    $action = $_POST['action'];
 } else if (isset($_GET['action'])) {
     $action = $_GET['action'];
 } else {
@@ -34,16 +34,16 @@ if($action == '') {
     
 } else if ($action == 'add_review') {
     if(isset($_POST['rest_id'])) {
-        $rest_id = filter_input(intval(INPUT_POST, 'rest_id'));
+        $rest_id = intval($_POST['rest_id']);
     } else {
         $rest_id = 1;
     }
     
-    $user_id = filter_input(intval(INPUT_POST, 'user_id'));
-    $rest_id = filter_input(intval(INPUT_POST, 'rest_id'));
-    $rev_title = filter_input(INPUT_POST, 'rev_title');
-    $rev_review = filter_input(INPUT_POST, 'rev_review');
-    $rev_rating = filter_input(intval(INPUT_POST, 'rev_rating'));
+    $user_id = intval($_POST['user_id']);
+    $rest_id = intval($_POST['rest_id']);
+    $rev_title = $_POST['rev_title'];
+    $rev_review = $_POST['rev_review'];
+    $rev_rating = intval($_POST['rev_rating']);
     
     add_review($user_id, $rest_id, $rev_title, $rev_review, $rev_rating);
     
@@ -57,9 +57,9 @@ if($action == '') {
     include('./restaurants/restaurant_view.php');
     
 } else if ($action == 'add_restaurant') {
-    $name = filter_input(INPUT_POST, 'rest_name');
-    $desc = filter_input(INPUT_POST, 'rest_desc');
-    $loc = filter_input(INPUT_POST, 'rest_loc');
+    $name = $_POST['rest_name'];
+    $desc = $_POST['rest_desc'];
+    $loc = $_POST['rest_loc'];
     
     new_restaurant($name, $desc, $loc);
     
