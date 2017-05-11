@@ -21,10 +21,6 @@
 						<label for="rev_title">Title</label>
 					</div>
 					<div class="input-field col s5">
-					    <!--
-						<input id="rev_rating" type="text" name="rev_rating" class="validate" />
-						<label for="rev_rating">Rating</label>
-						-->
 						<p class="range-field grey-text darken-2">
 						    Rating:
 						    <input type="range" id="rev_rating" name="rev_rating" min="0" max="5" />
@@ -34,7 +30,7 @@
 				<div class="row">
 					<div class="input-field col s10 offset-s1">
 						<textarea id="rev_review" name="rev_review" class="materialize-textarea"></textarea>
-						<label for="rev_review">User ID: <?php echo $_GET['user_id']; ?></label>
+						<label for="rev_review">Review</label>
 					</div>
 				</div>
 				<input id="rest_id" type="hidden" name="rest_id" value="<?php echo $_GET['rest_id']; ?>" />

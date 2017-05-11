@@ -25,13 +25,19 @@
 				<div class="col s10 offset-s1">
 					<div class="nav-wrapper">
 						<ul class="right hide-on-med-and-down">
+							<li><a href="#add_restaurant">Add a Restaurant</a></li>
 							<li><a href="../logout">Logout</a></li>
+						</ul>
+						<ul class="left hide-on-med-and-down">
+							<li><a href="ftp://ftp.welp.io">FTP</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<ul class="side-nav" id="mobile-demo">
+				<li><a href="#add_restaurant">Add a Restaurant</a></li>
 				<li><a href="../logout">Logout</a></li>
+				<li><a href="ftp://ftp.welp.io">FTP</a></li>
 			</ul>
 		</nav>
 		<?php else : ?>
@@ -43,19 +49,21 @@
 				<div class="col s10 offset-s1">
 					<div class="nav-wrapper">
 						<ul class="right hide-on-med-and-down">
-							<!--<li><a href="../sign_up">Sign Up</a></li>-->
+							<li><a class="modal-content" href="#add_restaurant">Add a Restaurant</a></li>
 							<li><a class="modal-content" href="#sign_up">Sign Up</a></li>
-							<!--<li><a href="../login">Login</a></li>-->
 							<li><a cless="modal-content" href="#login">Login</a></li>
+						</ul>
+						<ul class="left hide-on-med-and-down">
+							<li><a class="modal-content" href="ftp://ftp.welp.io">FTP</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 				<ul class="side-nav" id="mobile-demo">
-					<!--<li><a href="../sign_up">Sign Up</a></li>-->
+					<li><a class="modal-content" href="#add_restaurant">Add a Restaurant</a></li>
 					<li><a class="modal-content" href="#sign_up">Sign Up</a></li>
-					<!--<li><a href="../login">Login</a></li>-->
 					<li><a cless="modal-content" href="#login">Login</a></li>
+					<li><a class="modal-content" href="ftp://ftp.welp.io">FTP</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -114,6 +122,37 @@
 							</div>
 						</div>
 						<input type="submit" value="login" class="btn red right" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="add_restaurant" class="modal">
+			<div class="modal-content center-align">
+				<div class="row">
+					<h3>New Restaurant</h3>
+				</div>
+				<div class="row">
+					<form id="add_restaurant" class="col s12" action="../index.php" method="post">
+						<input type="hidden" name="action" value="add_restaurant" />
+						<div class="row">
+							<div class="input-field col s5 offset-s1">
+								<input id="rest_name" type="text" name="rest_name" class="validate" />
+								<label for="rest_name">Name</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s10 offset-s1">
+								<textarea id="rest_desc" name="rest_desc" class="materialize-textarea"></textarea>
+								<label for="rest_desc">Description</label>
+							</div>
+						</div>
+						<div class="row">
+						    <div class="input-field col s10 offset-s1">
+						        <input id="rest_loc" type="text" name="rest_loc" class="validate" />
+						        <label for="rest_loc">Location</label>
+						    </div>
+						</div>
+						<input type="submit" value="Submit" class="btn red right" />
 					</form>
 				</div>
 			</div>

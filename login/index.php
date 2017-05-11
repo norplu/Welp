@@ -3,11 +3,7 @@ require('../model/database.php');
 require('../model/user.php');
 
 if(isset($_POST['action'])) {
-    /*session_start();
-    $_SESSION['name']=$_POST['action'];
-    //storing the name of the user in SESSION variable.
-    header("location: profile.php");*/
-    $action = $_POST['action'];
+    $action = filter_inpute(INPUT_POST, 'action');
 } else {
     $action = '';
 }
@@ -16,8 +12,8 @@ if($action == '') {
     include('view.php');
 }
 if($action == 'login') {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = filter_input(INPUT_POST, 'email');
+    $password = filter_input(INPUT_POST, 'password');
     
     if (empty($email) || empty($password)) {
         $error = "Please fill in all fields.";

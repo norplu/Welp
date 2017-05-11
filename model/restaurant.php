@@ -4,7 +4,6 @@
         $query = "SELECT restaurant_id, name, description, location, hours
                   FROM Restaurant;";
         $restaurants = $db->query($query);
-        //$restaurants = $restaurants->fetch();
         
         return $restaurants;
     }
@@ -18,6 +17,12 @@
         $restaurant = $restaurant->fetch();
         
         return $restaurant;
+    }
+    
+    function new_restaurant($name, $desc, $location) {
+        global $db;
+        $query = "INSERT INTO Restaurant(name, description, location) VALUES('$name', '$desc', '$location');";
+        $db->exec($query);
     }
     
     
